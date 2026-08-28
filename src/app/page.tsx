@@ -86,7 +86,7 @@ export default function Home() {
       />
 
       {/* Main Content Area */}
-      <div className="flex-1 md:ml-72 flex flex-col min-h-screen">
+      <div className="flex-1 min-w-0 md:ml-72 flex flex-col min-h-screen">
         {/* Top Navbar */}
         <header className="sticky top-0 z-30 bg-slate-900/90 backdrop-blur-md border-b border-slate-700/60 shadow-2xs px-4 md:px-8 py-3 flex items-center justify-between gap-4">
           <div className="flex items-center gap-3">
