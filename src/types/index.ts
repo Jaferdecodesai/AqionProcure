@@ -161,3 +161,55 @@ export interface TechnicianJobSeeker {
   sourcePortal: string;
   profileUpdated: string;
 }
+
+// NEW INTERFACES FOR DHS <= 10/HR WORKERS & UAE AGENCIES
+export interface UaeTenDirhamWorker {
+  id: string;
+  name: string;
+  trade: 'Electrician' | 'Plumber' | 'HVAC / AC Tech' | 'Welder / Fabricator' | 'Gypsum Fixer' | 'Tile Mason' | 'Ductman' | 'MEP Helper / Laborer' | 'Painter / Finisher';
+  hourlyRateAed: number; // <= 10 AED/hr
+  dailyRateEquivalentAed: number; // 8-10 hr day
+  monthlySalaryEquivalentAed: number;
+  visaStatus: 'Freelance Visa (Green/Partner)' | 'Own Visa with NOC' | 'Visit Visa (Immediate)' | 'Cancelled Visa (Grace Period)' | 'Company Visa (NOC Available)';
+  currentLocation: string; // e.g. Sonapur, Al Quoz, Sharjah Industrial, Mussafah, Ajman Jurf, DIP
+  emirate: 'Dubai' | 'Sharjah' | 'Abu Dhabi' | 'Ajman';
+  availability: 'Available Immediately Today' | 'Available in 24 Hours' | 'Available this Weekend';
+  isFreelance: boolean;
+  sourcePlatform: 'TikTok Video Comments' | 'Facebook Ads Comments' | 'Dubizzle Freelance Technical' | 'Camp Direct Referral';
+  sourcePostOrVideoTitle: string;
+  commentText: string;
+  commentTimestamp: string;
+  phone: string;
+  whatsapp: string;
+  experienceYearsUae: number;
+  skills: string[];
+  nationality: string;
+  toolsEquipped: boolean; // Has own basic hand tools
+  orjContactStatus: 'New Lead' | 'ORJ Contacted' | 'Vetted & Ready' | 'Assigned to Client';
+  orjNotes?: string;
+  postedDate: string;
+}
+
+export interface UaeManpowerSupplyAgency {
+  id: string;
+  agencyName: string;
+  emirate: 'Dubai' | 'Sharjah' | 'Abu Dhabi' | 'Ajman';
+  licenseType: 'MOHRE Licensed Manpower Supply' | 'DED Technical Services' | 'Labor Supply Subcontractor';
+  licenseNo: string;
+  hourlyRateBenchmarkAed: string; // e.g. "8 - 10 AED/hr (Bulk >= 20 Techs)"
+  minHourlyRateAed: number;
+  availableTrades: string[];
+  currentAvailableStrength: number;
+  contactPerson: string;
+  designation: string;
+  phone: string;
+  whatsapp: string;
+  email: string;
+  address: string;
+  campLocation: string;
+  mohreApproved: boolean;
+  workmenCompInsured: boolean;
+  transportProvided: boolean;
+  minContractPeriod: 'Daily / On-Call' | 'Monthly' | 'Annual Subcontract';
+  notes: string;
+}
