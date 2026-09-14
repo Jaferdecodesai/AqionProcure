@@ -51,7 +51,7 @@ export const AnalyticsTab: React.FC<AnalyticsTabProps> = ({
   return (
     <div className="space-y-6">
       {/* Top Banner */}
-      <div className="p-5 rounded-2xl bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 text-white shadow-soft flex flex-col md:flex-row md:items-center justify-between gap-4">
+      <div className="p-5 rounded-2xl bg-gradient-to-r from-slate-800 via-slate-800 to-slate-900 text-white shadow-soft flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="space-y-1">
           <div className="flex items-center gap-2">
             <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-500 text-slate-950">
@@ -86,9 +86,9 @@ export const AnalyticsTab: React.FC<AnalyticsTabProps> = ({
       {/* Domain Breakdown Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Domain Distribution */}
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-card space-y-4">
-          <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-            <BarChart3 className="w-4 h-4 text-amber-600" />
+        <div className="bg-slate-900 p-5 rounded-2xl border border-slate-700/60 shadow-card space-y-4">
+          <h3 className="text-sm font-bold text-slate-50 flex items-center gap-2">
+            <BarChart3 className="w-4 h-4 text-amber-400" />
             <span>Tender Value by Service Domain (AED)</span>
           </h3>
 
@@ -98,10 +98,10 @@ export const AnalyticsTab: React.FC<AnalyticsTabProps> = ({
               return (
                 <div key={category} className="space-y-1">
                   <div className="flex items-center justify-between text-xs">
-                    <span className="font-semibold text-slate-800">{category} ({data.count})</span>
-                    <span className="font-mono font-bold text-amber-700">{data.totalAed.toLocaleString()} AED ({percentage}%)</span>
+                    <span className="font-semibold text-slate-100">{category} ({data.count})</span>
+                    <span className="font-mono font-bold text-amber-300">{data.totalAed.toLocaleString()} AED ({percentage}%)</span>
                   </div>
-                  <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+                  <div className="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
                     <div
                       className="h-full bg-gradient-to-r from-amber-500 to-amber-600 rounded-full"
                       style={{ width: `${percentage}%` }}
@@ -114,25 +114,25 @@ export const AnalyticsTab: React.FC<AnalyticsTabProps> = ({
         </div>
 
         {/* Emirate & Client Distribution */}
-        <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-card space-y-4">
-          <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-            <Building2 className="w-4 h-4 text-sky-600" />
+        <div className="bg-slate-900 p-5 rounded-2xl border border-slate-700/60 shadow-card space-y-4">
+          <h3 className="text-sm font-bold text-slate-50 flex items-center gap-2">
+            <Building2 className="w-4 h-4 text-sky-400" />
             <span>Geographic & Regional Tender Distribution</span>
           </h3>
 
           <div className="grid grid-cols-2 gap-3">
             {Object.entries(emirateStats).map(([emirate, count]) => (
-              <div key={emirate} className="p-3.5 bg-slate-50 rounded-xl border border-slate-200 text-center">
-                <span className="text-xs text-slate-500 font-bold uppercase block">{emirate}</span>
-                <span className="text-xl font-black text-slate-900 font-mono mt-1 block">{count}</span>
+              <div key={emirate} className="p-3.5 bg-slate-800/50 rounded-xl border border-slate-700/60 text-center">
+                <span className="text-xs text-slate-400 font-bold uppercase block">{emirate}</span>
+                <span className="text-xl font-black text-slate-50 font-mono mt-1 block">{count}</span>
                 <span className="text-[10px] text-slate-400">Active RFQ Postings</span>
               </div>
             ))}
           </div>
 
-          <div className="p-3 bg-amber-50 rounded-xl border border-amber-200 text-xs space-y-1 text-slate-700">
-            <span className="font-bold text-amber-900 block">L1 Procurement Insight</span>
-            <p className="text-[11px] text-slate-600">
+          <div className="p-3 bg-amber-500/10 rounded-xl border border-amber-500/30 text-xs space-y-1 text-slate-200">
+            <span className="font-bold text-amber-200 block">L1 Procurement Insight</span>
+            <p className="text-[11px] text-slate-300">
               Dubai accounts for over 80% of all active MEP and Fit-Out subcontractor packages, with peak activity in Downtown Dubai, Business Bay, and Dubai South logistics hubs.
             </p>
           </div>

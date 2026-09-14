@@ -110,27 +110,27 @@ export const Sidebar: React.FC<SidebarProps> = ({
       {isMobileOpen && (
         <div 
           onClick={() => setIsMobileOpen(false)}
-          className="fixed inset-0 z-40 bg-slate-900/40 backdrop-blur-xs md:hidden"
+          className="fixed inset-0 z-40 bg-slate-950/70 backdrop-blur-xs md:hidden"
         />
       )}
 
       {/* Sidebar Container */}
-      <aside className={`fixed top-0 bottom-0 left-0 z-50 w-72 bg-white border-r border-slate-200/90 shadow-soft flex flex-col transition-transform duration-200 ease-in-out md:translate-x-0 ${
+      <aside className={`fixed top-0 bottom-0 left-0 z-50 w-72 bg-slate-900 border-r border-slate-700/60 shadow-soft flex flex-col transition-transform duration-200 ease-in-out md:translate-x-0 ${
         isMobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
       }`}>
         {/* Brand Header */}
-        <div className="p-4 border-b border-slate-100 flex items-center justify-between">
+        <div className="p-4 border-b border-slate-800 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 via-amber-600 to-amber-700 flex items-center justify-center shadow-md shadow-amber-500/20 text-white font-bold">
               <Layers className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <h1 className="text-lg font-black text-slate-900 tracking-tight font-sans">
-                  aqion<span className="text-amber-600">procure</span>
+                <h1 className="text-lg font-black text-slate-50 tracking-tight font-sans">
+                  aqion<span className="text-amber-400">procure</span>
                 </h1>
               </div>
-              <p className="text-[10px] text-slate-500 font-semibold tracking-wider uppercase">
+              <p className="text-[10px] text-slate-400 font-semibold tracking-wider uppercase">
                 UAE Tender & Manpower Hub
               </p>
             </div>
@@ -138,14 +138,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
           <button
             onClick={() => setIsMobileOpen(false)}
-            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-700 hover:bg-slate-100 md:hidden"
+            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-800 md:hidden"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Scrollable Navigation Body */}
-        <div className="flex-1 overflow-y-auto p-3 space-y-5 text-xs text-slate-700">
+        <div className="flex-1 overflow-y-auto p-3 space-y-5 text-xs text-slate-200">
           {/* Main Module Tabs */}
           <div>
             <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider px-3 block mb-1.5">
@@ -157,8 +157,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onClick={() => { setActiveTab('procurement'); setIsMobileOpen(false); }}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl font-bold transition-all ${
                   activeTab === 'procurement'
-                    ? 'bg-amber-500 text-white shadow-md shadow-amber-500/20'
-                    : 'text-slate-700 hover:bg-slate-100/80 hover:text-slate-900'
+                    ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/20'
+                    : 'text-slate-200 hover:bg-slate-800/80 hover:text-slate-50'
                 }`}
               >
                 <div className="flex items-center gap-2.5">
@@ -166,7 +166,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   <span>UAE Tenders & RFQs</span>
                 </div>
                 <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${
-                  activeTab === 'procurement' ? 'bg-white/20 text-white' : 'bg-amber-50 text-amber-800 border border-amber-200'
+                  activeTab === 'procurement' ? 'bg-slate-950/10 text-slate-950' : 'bg-amber-500/15 text-amber-300 border border-amber-500/30'
                 }`}>
                   {counts.tendersCount} Live
                 </span>
@@ -177,16 +177,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onClick={() => { setActiveTab('ten_dirham_workers'); setIsMobileOpen(false); }}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl font-bold transition-all ${
                   activeTab === 'ten_dirham_workers'
-                    ? 'bg-gradient-to-r from-amber-600 to-amber-700 text-white shadow-md shadow-amber-600/20'
-                    : 'text-slate-700 hover:bg-slate-100/80 hover:text-slate-900 border border-amber-200/60 bg-amber-50/40'
+                    ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/25'
+                    : 'text-slate-200 hover:bg-slate-800/80 hover:text-slate-50 bg-slate-800/30 border border-amber-500/20'
                 }`}
               >
                 <div className="flex items-center gap-2.5">
-                  <Zap className="w-4 h-4 text-amber-500" />
-                  <span className="font-extrabold text-slate-900">DHS ≤10/hr Labor (ORJ)</span>
+                  <Zap className="w-4 h-4 text-amber-400" />
+                  <span className="font-extrabold text-amber-300">DHS ≤10/hr Labor (ORJ)</span>
                 </div>
                 <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${
-                  activeTab === 'ten_dirham_workers' ? 'bg-white/20 text-white' : 'bg-amber-100 text-amber-900 border border-amber-300 animate-pulse'
+                  activeTab === 'ten_dirham_workers' ? 'bg-slate-950/20 text-slate-950' : 'bg-amber-500/20 text-amber-300 border border-amber-400/40 animate-pulse'
                 }`}>
                   {counts.tenDirhamWorkersCount} Leads
                 </span>
@@ -197,8 +197,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onClick={() => { setActiveTab('manpower'); setIsMobileOpen(false); }}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl font-bold transition-all ${
                   activeTab === 'manpower'
-                    ? 'bg-sky-600 text-white shadow-md shadow-sky-600/20'
-                    : 'text-slate-700 hover:bg-slate-100/80 hover:text-slate-900'
+                    ? 'bg-sky-500 text-slate-950 shadow-md shadow-sky-600/20'
+                    : 'text-slate-200 hover:bg-slate-800/80 hover:text-slate-50'
                 }`}
               >
                 <div className="flex items-center gap-2.5">
@@ -206,7 +206,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   <span>Manpower (India / Kerala)</span>
                 </div>
                 <span className={`px-2 py-0.5 rounded-full text-[10px] font-mono font-bold ${
-                  activeTab === 'manpower' ? 'bg-white/20 text-white' : 'bg-sky-50 text-sky-800 border border-sky-200'
+                  activeTab === 'manpower' ? 'bg-slate-950/10 text-slate-950' : 'bg-sky-500/15 text-sky-300 border border-sky-500/30'
                 }`}>
                   {counts.agenciesCount + counts.leadsCount} Leads
                 </span>
@@ -217,15 +217,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onClick={() => { setActiveTab('analytics'); setIsMobileOpen(false); }}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl font-bold transition-all ${
                   activeTab === 'analytics'
-                    ? 'bg-slate-900 text-white shadow-md shadow-slate-900/10'
-                    : 'text-slate-700 hover:bg-slate-100/80 hover:text-slate-900'
+                    ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/25'
+                    : 'text-slate-200 hover:bg-slate-800/80 hover:text-slate-50'
                 }`}
               >
                 <div className="flex items-center gap-2.5">
-                  <BarChart3 className="w-4 h-4 text-emerald-500" />
+                  <BarChart3 className="w-4 h-4 text-emerald-400" />
                   <span>UAE Tender Analytics</span>
                 </div>
-                <span className="text-[10px] text-slate-400">L1 Benchmarks</span>
+                <span className={`text-[10px] ${activeTab === 'analytics' ? 'text-slate-950/70' : 'text-slate-400'}`}>L1 Benchmarks</span>
               </button>
 
               {/* Tab 4: Scraper Engine Hub */}
@@ -233,8 +233,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 onClick={() => { setActiveTab('scraper'); setIsMobileOpen(false); }}
                 className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl font-bold transition-all ${
                   activeTab === 'scraper'
-                    ? 'bg-slate-900 text-white shadow-md shadow-slate-900/10'
-                    : 'text-slate-700 hover:bg-slate-100/80 hover:text-slate-900'
+                    ? 'bg-amber-500 text-slate-950 shadow-md shadow-amber-500/25'
+                    : 'text-slate-200 hover:bg-slate-800/80 hover:text-slate-50'
                 }`}
               >
                 <div className="flex items-center gap-2.5">
@@ -256,7 +256,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 {selectedDomain !== 'all' && (
                   <button 
                     onClick={() => setSelectedDomain('all')}
-                    className="text-[10px] text-amber-600 hover:underline font-bold"
+                    className="text-[10px] text-amber-400 hover:underline font-bold"
                   >
                     Reset
                   </button>
@@ -272,12 +272,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
                       onClick={() => setSelectedDomain(d.id)}
                       className={`w-full flex items-center justify-between px-3 py-1.5 rounded-lg text-left transition-all ${
                         isSelected
-                          ? 'bg-amber-50 text-amber-900 font-bold border border-amber-200'
-                          : 'text-slate-600 hover:bg-slate-100/70 hover:text-slate-900'
+                          ? 'bg-amber-500/10 text-amber-200 font-bold border border-amber-500/30'
+                          : 'text-slate-300 hover:bg-slate-800/70 hover:text-slate-50'
                       }`}
                     >
                       <div className="flex items-center gap-2 truncate">
-                        <Icon className={`w-3.5 h-3.5 shrink-0 ${isSelected ? 'text-amber-600' : 'text-slate-400'}`} />
+                        <Icon className={`w-3.5 h-3.5 shrink-0 ${isSelected ? 'text-amber-400' : 'text-slate-400'}`} />
                         <span className="truncate text-xs">{d.name}</span>
                       </div>
                       <span className="text-[10px] text-slate-400 font-mono font-medium shrink-0 ml-1">
@@ -303,8 +303,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     onClick={() => setSelectedEmirate(em)}
                     className={`px-2.5 py-1 rounded-md text-[11px] font-semibold transition-all ${
                       selectedEmirate.toLowerCase() === em.toLowerCase()
-                        ? 'bg-slate-900 text-white shadow-2xs'
-                        : 'bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200'
+                        ? 'bg-amber-500 text-slate-950 shadow-2xs'
+                        : 'bg-slate-800 text-slate-300 hover:text-slate-50 border border-slate-700/60'
                     }`}
                   >
                     {em === 'all' ? 'All Emirates' : em}
@@ -315,44 +315,44 @@ export const Sidebar: React.FC<SidebarProps> = ({
           )}
 
           {/* Quick Actions */}
-          <div className="p-3 bg-slate-50 rounded-2xl border border-slate-200/80 space-y-2">
+          <div className="p-3 bg-slate-800/50 rounded-2xl border border-slate-700/60 space-y-2">
             <button
               onClick={onOpenNewRfq}
-              className="w-full flex items-center justify-center gap-1.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold shadow-xs transition-all"
+              className="w-full flex items-center justify-center gap-1.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold shadow-xs transition-all"
             >
-              <PlusCircle className="w-3.5 h-3.5 text-amber-400" />
+              <PlusCircle className="w-3.5 h-3.5 text-current" />
               <span>Post UAE Requirement</span>
             </button>
 
             <button
               onClick={onTriggerScrape}
-              className="w-full flex items-center justify-center gap-1.5 py-2 rounded-xl bg-white hover:bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200 shadow-2xs transition-all"
+              className="w-full flex items-center justify-center gap-1.5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-semibold border border-slate-700/60 shadow-2xs transition-all"
             >
-              <RefreshCw className="w-3.5 h-3.5 text-amber-600" />
-              <span>Scrape UAE Social Leads</span>
+              <RefreshCw className="w-3.5 h-3.5 text-amber-400" />
+              <span>Rescrape All Portals</span>
             </button>
           </div>
         </div>
 
         {/* Sidebar Footer / Dual Clocks & Port Indicator */}
-        <div className="p-3 bg-slate-50 border-t border-slate-200/80 space-y-2">
+        <div className="p-3 bg-slate-800/50 border-t border-slate-700/60 space-y-2">
           <div className="grid grid-cols-2 gap-2 text-center">
-            <div className="bg-white p-2 rounded-xl border border-slate-200 shadow-2xs">
+            <div className="bg-slate-900 p-2 rounded-xl border border-slate-700/60 shadow-2xs">
               <span className="text-[10px] text-slate-400 font-bold block">🇦🇪 DUBAI</span>
-              <span className="text-xs font-mono font-bold text-amber-700">{uaeTime || '04:00 PM'}</span>
+              <span className="text-xs font-mono font-bold text-amber-300">{uaeTime || '04:00 PM'}</span>
             </div>
-            <div className="bg-white p-2 rounded-xl border border-slate-200 shadow-2xs">
+            <div className="bg-slate-900 p-2 rounded-xl border border-slate-700/60 shadow-2xs">
               <span className="text-[10px] text-slate-400 font-bold block">🇮🇳 INDIA</span>
-              <span className="text-xs font-mono font-bold text-sky-700">{indiaTime || '05:30 PM'}</span>
+              <span className="text-xs font-mono font-bold text-sky-300">{indiaTime || '05:30 PM'}</span>
             </div>
           </div>
 
-          <div className="flex items-center justify-between text-[11px] px-1 text-slate-500">
+          <div className="flex items-center justify-between text-[11px] px-1 text-slate-400">
             <span className="inline-flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
               Port 3007 Active
             </span>
-            <span className="font-mono font-semibold text-slate-700">v5.0 ORJ</span>
+            <span className="font-mono font-semibold text-slate-200">v5.0 ORJ</span>
           </div>
         </div>
       </aside>
