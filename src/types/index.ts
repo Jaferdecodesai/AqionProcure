@@ -188,6 +188,7 @@ export interface UaeTenDirhamWorker {
   orjContactStatus: 'New Lead' | 'ORJ Contacted' | 'Vetted & Ready' | 'Assigned to Client';
   orjNotes?: string;
   postedDate: string;
+  isLiveScraped?: boolean;
 }
 
 export interface UaeManpowerSupplyAgency {
